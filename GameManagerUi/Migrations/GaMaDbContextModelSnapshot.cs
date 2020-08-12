@@ -50,7 +50,7 @@ namespace GameManagerUi.Migrations
                     b.Property<int?>("AwayTeamId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("GameManagerId")
+                    b.Property<int>("GameManagerId")
                         .HasColumnType("int");
 
                     b.Property<int>("HomeScore")
@@ -83,7 +83,7 @@ namespace GameManagerUi.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("TeamId")
+                    b.Property<int>("TeamId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -100,20 +100,15 @@ namespace GameManagerUi.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("GameManagerId")
+                    b.Property<int>("GameManagerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("VenueId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("GameManagerId");
-
-                    b.HasIndex("VenueId");
 
                     b.ToTable("Teams");
                 });
@@ -137,7 +132,13 @@ namespace GameManagerUi.Migrations
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TeamId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("TeamId")
+                        .IsUnique();
 
                     b.ToTable("Venues");
                 });
@@ -150,7 +151,9 @@ namespace GameManagerUi.Migrations
 
                     b.HasOne("GameManagerUi.Models.GameManager", null)
                         .WithMany("Matches")
-                        .HasForeignKey("GameManagerId");
+                        .HasForeignKey("GameManagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("GameManagerUi.Models.Team", "HomeTeam")
                         .WithMany()
@@ -161,18 +164,27 @@ namespace GameManagerUi.Migrations
                 {
                     b.HasOne("GameManagerUi.Models.Team", null)
                         .WithMany("Players")
-                        .HasForeignKey("TeamId");
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("GameManagerUi.Models.Team", b =>
                 {
                     b.HasOne("GameManagerUi.Models.GameManager", null)
                         .WithMany("Teams")
-                        .HasForeignKey("GameManagerId");
+                        .HasForeignKey("GameManagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
 
-                    b.HasOne("GameManagerUi.Models.Venue", "Venue")
-                        .WithMany()
-                        .HasForeignKey("VenueId");
+            modelBuilder.Entity("GameManagerUi.Models.Venue", b =>
+                {
+                    b.HasOne("GameManagerUi.Models.Team", null)
+                        .WithOne("Venue")
+                        .HasForeignKey("GameManagerUi.Models.Venue", "TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

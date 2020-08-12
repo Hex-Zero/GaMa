@@ -11,5 +11,6 @@ namespace GameManagerUi.Models
         public Team AwayTeam { get; set; } = new Team();
         public int HomeScore { get; set; }
         public int AwayScore { get; set; }
+        public int GameManagerId { get; set; }
     }
 }
