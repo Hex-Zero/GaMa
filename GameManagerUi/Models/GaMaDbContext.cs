@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GameManagerUi.Models 
 { 
-    class GaMaDbContext : DbContext
+   public class GaMaDbContext : DbContext
     {
         public GaMaDbContext(DbContextOptions options) : base(options) { }
         public DbSet<GameManager> GameManagers { get;  set; }

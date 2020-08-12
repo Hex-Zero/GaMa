@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace GameManagerUi.Models
 {
-    class Venue
+   public class Venue
     {
         public int Id { get; set; }
         public string Street { get; set; }

@@ -4,14 +4,16 @@ using GameManagerUi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameManagerUi.Migrations
 {
     [DbContext(typeof(GaMaDbContext))]
-    partial class GaMaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200812143858_addLists")]
+    partial class addLists
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

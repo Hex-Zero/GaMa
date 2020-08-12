@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GameManagerUi.Models
 {
-    class Match
+    public class Match
     {
         public int Id { get; set; }
         public Team HomeTeam { get; set; }

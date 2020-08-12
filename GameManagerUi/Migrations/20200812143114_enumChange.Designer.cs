@@ -4,14 +4,16 @@ using GameManagerUi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameManagerUi.Migrations
 {
     [DbContext(typeof(GaMaDbContext))]
-    partial class GaMaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200812143114_enumChange")]
+    partial class enumChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,6 +32,9 @@ namespace GameManagerUi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PlayerLimit")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -95,9 +100,6 @@ namespace GameManagerUi.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("GameManagerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -105,8 +107,6 @@ namespace GameManagerUi.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GameManagerId");
 
                     b.HasIndex("VenueId");
 
@@ -157,10 +157,6 @@ namespace GameManagerUi.Migrations
 
             modelBuilder.Entity("GameManagerUi.Models.Team", b =>
                 {
-                    b.HasOne("GameManagerUi.Models.GameManager", null)
-                        .WithMany("Teams")
-                        .HasForeignKey("GameManagerId");
-
                     b.HasOne("GameManagerUi.Models.Venue", "Venue")
                         .WithMany()
                         .HasForeignKey("VenueId");
