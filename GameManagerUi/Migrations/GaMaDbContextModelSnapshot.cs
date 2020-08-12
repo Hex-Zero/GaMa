@@ -50,6 +50,9 @@ namespace GameManagerUi.Migrations
                     b.Property<int?>("AwayTeamId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("GameManagerId")
+                        .HasColumnType("int");
+
                     b.Property<int>("HomeScore")
                         .HasColumnType("int");
 
@@ -59,6 +62,8 @@ namespace GameManagerUi.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AwayTeamId");
+
+                    b.HasIndex("GameManagerId");
 
                     b.HasIndex("HomeTeamId");
 
@@ -142,6 +147,10 @@ namespace GameManagerUi.Migrations
                     b.HasOne("GameManagerUi.Models.Team", "AwayTeam")
                         .WithMany()
                         .HasForeignKey("AwayTeamId");
+
+                    b.HasOne("GameManagerUi.Models.GameManager", null)
+                        .WithMany("Matches")
+                        .HasForeignKey("GameManagerId");
 
                     b.HasOne("GameManagerUi.Models.Team", "HomeTeam")
                         .WithMany()

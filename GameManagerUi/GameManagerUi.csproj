@@ -15,10 +15,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Matches\" />
-    <Folder Include="Pages\Venues\" />
-    <Folder Include="Pages\Players\" />
-  </ItemGroup>
-
 </Project>

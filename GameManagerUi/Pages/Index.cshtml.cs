@@ -17,9 +17,9 @@ namespace GameManagerUi.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public ActionResult OnGet()
         {
-
+            return Redirect("GameManagers/index");
         }
     }
 }
