@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GaMaDataAccess.Models
+namespace GaMaUI.Models
 {
     class GaMaDbContext : DbContext
     {

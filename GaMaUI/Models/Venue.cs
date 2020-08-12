@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace GaMaDataAccess.Models
+namespace GaMaUI.Models
 {
     class Venue
     {
