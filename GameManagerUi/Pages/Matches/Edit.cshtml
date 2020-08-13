@@ -1,0 +1,56 @@
+﻿@page
+@model GameManagerUi.Pages.Matches.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Match</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Match.MatchId" />
+               <div class="form-group">
+                   <label asp-for="Match.HomeTeamId" class="control-label"></label>
+                   <select asp-for="Match.HomeTeamId" class ="form-control" asp-items="@Model.TeamSelect"></select>
+                   <span asp-validation-for="Match.HomeTeamId" class="text-danger"></span>
+               </div>
+               <div class="form-group">
+                   <label asp-for="Match.AwayTeamId" class="control-label"></label>
+                   <select asp-for="Match.AwayTeamId" class ="form-control" asp-items="@Model.TeamSelect"></select>
+                   <span asp-validation-for="Match.AwayTeamId" class="text-danger"></span>
+               </div>
+            <div class="form-group">
+                <label asp-for="Match.HomeScore" class="control-label"></label>
+                <input asp-for="Match.HomeScore" class="form-control" />
+                <span asp-validation-for="Match.HomeScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.AwayScore" class="control-label"></label>
+                <input asp-for="Match.AwayScore" class="form-control" />
+                <span asp-validation-for="Match.AwayScore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Match.Data" class="control-label"></label>
+                <input asp-for="Match.Data" class="form-control" />
+                <span asp-validation-for="Match.Data" class="text-danger"></span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p>
+                <a class="btn btn-outline-primary" asp-page="./Index">Cancel</a></p>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

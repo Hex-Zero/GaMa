@@ -15,6 +15,9 @@ a {
 *{
   font-family: 'Montserrat', sans-serif;
 }
+html{
+  font-size: 12px;
+}
 
 
 .btn-primary {
@@ -61,6 +64,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  font-size: 14px;
 }
 
 .footer {
@@ -76,11 +80,29 @@ body {
   background: #eeeeff;
   padding: 4rem;
   border-radius: 1rem;
+  transform: scale(.70);
 }
 
 #select-game-manager> * {
   color: #3a2753;
 }
+
+td{
+  position: relative;
+}
+
+#select-game-manager > table > tbody a i.fa-times {
+  position: absolute;
+  right: 2rem;
+  top: 2.2rem;
+  color: #c4c4c4;
+  font-size: 1.2rem;
+}
+
+#select-game-manager > table > tbody a i.fa-times:hover {
+  color: #585858;
+}
+
 
 #select-game-manager > table h6{
   color: #bebde7;
@@ -92,7 +114,7 @@ body {
 }
 
 
-#select-game-manager > table  td {
+#select-game-manager > table td {
   padding: 1rem 1rem .7rem 1rem;
   border: none;
   border-radius: .4rem;
@@ -103,6 +125,7 @@ body {
 }
 
 #select-game-manager > table{
+  text-align: left;
   cursor: pointer;
   padding: 4rem;
   background: #fafafa;
@@ -179,16 +202,34 @@ body {
 }
 
 .table{
-  margin-top:1rem;
+  margin-top: .5rem;
   padding: 1rem;
   border-radius: .5rem;
   background: #f5f5ff;
+  text-align: center;
 }
 
 .table > tbody> tr > td{
-  padding: 1rem;
+  vertical-align: middle;
   border: none;
 }
+
+tr >:nth-child(even){
+ background-color: rgba(247, 252, 255, 0.22);
+}
+
+.table > tbody tr:nth-child(even){
+  background-color: #f1eaff;
+}
+
+.table > tbody tr:hover{
+   background-color: #e5dcff;
+ }
+
+.table > tbody > tr > td > .btn-outline-primary{
+  margin-left: .75rem;
+}
+
 
 .table > thead> tr > th{
    background: #604189;

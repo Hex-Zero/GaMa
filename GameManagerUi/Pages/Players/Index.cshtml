@@ -1,0 +1,40 @@
+﻿@page
+@model GameManagerUi.Pages.Players.IndexModel
+
+@{
+    ViewData["Title"] = "Player List";
+}
+
+<div class="d-flex justify-content-between">
+    <h3>@ViewData["Title"]</h3>
+   <p><a class="btn btn-success" asp-page="Create">Add Player<i class="fas fa-plus pl-2"></i></a></p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player[0].LastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Player) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.PlayerId"><i class="far fa-edit"></i></a>
+                <a class="btn btn-outline-primary" asp-page="./Delete" asp-route-id="@item.PlayerId"><i class="far fa-trash-alt"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

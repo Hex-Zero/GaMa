@@ -1,0 +1,53 @@
+﻿@page
+@using GameManagerUi.Models
+@model GameManagerUi.Pages.Matches.IndexModel
+
+@{
+    ViewData["Title"] = "Match List";
+}
+<div class="d-flex justify-content-between">
+    <h3>@ViewData["Title"]</h3>
+    <p><a class="btn btn-success" asp-page="Create">Add Match<i class="fas fa-plus pl-2"></i></a></p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Match[0].HomeTeam)
+            </th>
+            <th>
+                Score
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match[0].AwayTeam)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Match[0].Data)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Match) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeTeam.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeScore) : @Html.DisplayFor(modelItem => item.AwayScore)
+            </td>
+            <td>
+               @Html.DisplayFor(modelItem => item.AwayTeam.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.MatchId"><i class="far fa-edit"></i></a>
+                <a class="btn btn-outline-primary" asp-page="./Delete" asp-route-id="@item.MatchId"><i class="far fa-trash-alt"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
