@@ -12,6 +12,11 @@ a {
   color: #0366d6;
 }
 
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -66,6 +71,141 @@ body {
   line-height: 60px;
 }
 
-.btn {
-  padding-bottom: .45rem;
+#select-game-manager{
+  margin: 6rem;
+  background: #eeeeff;
+  padding: 4rem;
+  border-radius: 1rem;
 }
+
+#select-game-manager> * {
+  color: #3a2753;
+}
+
+#select-game-manager > table h6{
+  color: #bebde7;
+  font-style: italic;
+}
+
+#select-game-manager > table tr:nth-child(even) {
+  background: #f7f7ff;
+}
+
+
+#select-game-manager > table  td {
+  padding: 1rem 1rem .7rem 1rem;
+  border: none;
+  border-radius: .4rem;
+}
+
+#select-game-manager > table tr:hover{
+  background: white;
+}
+
+#select-game-manager > table{
+  cursor: pointer;
+  padding: 4rem;
+  background: #fafafa;
+  border-radius: .5rem;
+}
+
+#select-game-manager  h6 >i{
+  position: absolute;
+  color: #cecece;
+  right: .5rem;
+  top: .5rem;
+}
+
+#select-game-manager > .d-flex > h6{
+  position: relative;
+}
+
+#select-game-manager > .btn-outline-primary {
+  margin: 2rem 0 0;
+  width: 100%;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  background: white;
+  border: none;
+}
+
+#select-game-manager > .btn-outline-primary:hover {
+  background: #f5f5ff;
+}
+
+.fas.fa-sort-down.pl-2{
+  vertical-align: top;
+}
+
+#select-game-manager  #show-all-managers{
+  padding: .6rem 1rem;
+  margin-top: 1rem;
+  background: #604189;
+  border: none;
+}
+
+#select-game-manager  #show-all-managers:hover{
+  background: #7754a5;
+  border: none;
+}
+
+#add-new-game-manager form{
+  border: none;
+  margin-top: 4rem;
+  background: #eeeeff;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  min-width: 30rem;
+}
+
+#add-new-game-manager{
+  color: #604189;
+  padding: 4rem;
+}
+
+.btn.btn-primary{
+  background: #604189;
+}
+
+.btn.btn-outline-primary{
+   background: white;
+  color: #604189;
+  border-color: #604189;
+}
+
+.btn.btn-outline-primary:hover{
+  background: #ebdaff;
+}
+
+.table{
+  margin-top:1rem;
+  padding: 1rem;
+  border-radius: .5rem;
+  background: #f5f5ff;
+}
+
+.table > tbody> tr > td{
+  padding: 1rem;
+  border: none;
+}
+
+.table > thead> tr > th{
+   background: #604189;
+   color: white;
+   padding: 1rem;
+   border: none;
+}
+
+.table > thead > tr > :first-child {
+  border-top-left-radius: .5rem;
+}
+
+.table > thead > tr > :last-child {
+  border-top-right-radius: .5rem;
+}
+
+
+
+
+
