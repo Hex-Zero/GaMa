@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace GameManagerUi.Models
@@ -7,10 +8,9 @@ namespace GameManagerUi.Models
     public  class Match
     {
         public int Id { get; set; }
-        public Team HomeTeam { get; set; } = new Team();
-        public Team AwayTeam { get; set; } = new Team();
+        public int HomeTeamId { get; set; }
+        public int AwayTeamId { get; set; }
         public int HomeScore { get; set; }
         public int AwayScore { get; set; }
-        public int GameManagerId { get; set; }
     }
 }

@@ -16,8 +16,4 @@ namespace GameManagerUi.Models
         public List<Match> Matches { get; set; } = new List<Match>();
     }
 
-    public static class CurrentManager
-    {
-        public static int Id { get; set; }
-    }
 }

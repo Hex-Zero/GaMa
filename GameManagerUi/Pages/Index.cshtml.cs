@@ -19,7 +19,7 @@ namespace GameManagerUi.Pages
 
         public ActionResult OnGet()
         {
-            return Redirect("GameManagers/index");
+            return Redirect("gms/index");
         }
     }
 }
