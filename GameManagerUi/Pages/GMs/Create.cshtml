@@ -1,10 +1,11 @@
 ﻿@page
 @model GameManagerUi.Pages.GMs.CreateModel
 <div id="add-new-game-manager">
-    <h4>Add New Game Manager</h4>
+
     <div class="d-flex justify-content-center">
         <div class="row">
             <div class="col-md-4">
+                <h4 class="text-nowrap">Add New Game Manager</h4>
                 <form method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
@@ -18,7 +19,7 @@
                         <span asp-validation-for="GameManager.PlayerLimit" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                       <a class="btn btn-outline-primary" asp-page="Index">Cancel</a> <input type="submit" value="Next" class="btn btn-primary float-right"/>
+                        <a class="btn btn-outline-primary" asp-page="Index">Cancel</a> <input type="submit" value="Next" class="btn btn-primary float-right"/>
                     </div>
                 </form>
             </div>

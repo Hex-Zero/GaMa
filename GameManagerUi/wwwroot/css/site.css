@@ -1,13 +1,9 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
+﻿a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
 }
 
-/* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
 }
@@ -113,7 +109,6 @@ td{
   background: #f7f7ff;
 }
 
-
 #select-game-manager > table td {
   padding: 1rem 1rem .7rem 1rem;
   border: none;
@@ -175,7 +170,6 @@ td{
 
 #add-new-game-manager form{
   border: none;
-  margin-top: 4rem;
   background: #eeeeff;
   padding: 2rem 3rem;
   border-radius: 1rem;
@@ -184,11 +178,15 @@ td{
 
 #add-new-game-manager{
   color: #604189;
-  padding: 4rem;
+  padding: 4rem 24rem ;
 }
 
 .btn.btn-primary{
   background: #604189;
+}
+
+.btn.btn-primary:hover{
+  background: #7753af;
 }
 
 .btn.btn-outline-primary{
@@ -230,7 +228,6 @@ tr >:nth-child(even){
   margin-left: .75rem;
 }
 
-
 .table > thead> tr > th{
    background: #604189;
    color: white;
@@ -255,6 +252,13 @@ header .fa-times {
   background-color: blue;
 }
 
+.btn.btn-success{
+  background-color: #006556;
+}
+
+.btn.btn-success:hover{
+  background-color: #009a84;
+}
 
 
 
