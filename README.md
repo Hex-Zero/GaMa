@@ -11,4 +11,4 @@ Customers (CRUD)
 When you launch the application, you will be greeted with a welcome message and an introductory page. To create a new customer, navigate to the Customers link as the top right-hand side. After clicking the link, you will find yourself in the Customers List page.
 
 
-![](/GameManagerUi/Support/Manual/Gm-Create.jpg)
+![](/GameManagerUi/Support/Manual/Gm-Select.jpg)
