@@ -1,4 +1,6 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const navBar = $("body")
 
-// Write your Javascript code.
+navBar.on("click", function (e) {
+    console.log(e)
+    $(e.target).append($(document.createElement("div")).html("hi"))
+})

@@ -239,13 +239,21 @@ tr >:nth-child(even){
 }
 
 .table > thead > tr > :first-child {
-  border-top-left-radius: .5rem;
+  border-top-left-radius: .3rem;
 }
 
 .table > thead > tr > :last-child {
-  border-top-right-radius: .5rem;
+  border-top-right-radius: .3rem;
 }
 
+header .fa-times {
+  color: #717171;
+  font-size: 1rem;
+}
+
+.nav-link.active-link{
+  background-color: blue;
+}
 
 
 
