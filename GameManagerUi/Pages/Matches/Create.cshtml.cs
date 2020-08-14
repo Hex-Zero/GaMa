@@ -24,6 +24,7 @@ namespace GameManagerUi.Pages.Matches
         void PopulateTeamsList(object selectedTeam = null)
         {
             var teamQuery = from team in _context.Teams
+                where team.Name != "Free Agent"
                 orderby team.Name
                 select team;
             TeamSelect = new SelectList(teamQuery.AsNoTracking(),"TeamId","Name",selectedTeam);

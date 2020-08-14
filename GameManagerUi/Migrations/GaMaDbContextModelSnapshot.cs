@@ -70,7 +70,11 @@ namespace GameManagerUi.Migrations
 
                     b.HasKey("MatchId");
 
+                    b.HasIndex("AwayTeamId");
+
                     b.HasIndex("GameManagerId");
+
+                    b.HasIndex("HomeTeamId");
 
                     b.ToTable("Matches");
                 });
@@ -87,6 +91,9 @@ namespace GameManagerUi.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PlayerAvailable")
+                        .HasColumnType("bit");
 
                     b.Property<int>("TeamId")
                         .HasColumnType("int");
@@ -152,9 +159,21 @@ namespace GameManagerUi.Migrations
 
             modelBuilder.Entity("GameManagerUi.Models.Match", b =>
                 {
+                    b.HasOne("GameManagerUi.Models.Team", "AwayTeam")
+                        .WithMany()
+                        .HasForeignKey("AwayTeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("GameManagerUi.Models.GameManager", null)
                         .WithMany("Matches")
                         .HasForeignKey("GameManagerId");
+
+                    b.HasOne("GameManagerUi.Models.Team", "HomeTeam")
+                        .WithMany()
+                        .HasForeignKey("HomeTeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("GameManagerUi.Models.Player", b =>
