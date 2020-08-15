@@ -9,7 +9,9 @@ namespace GameManagerUi.Models
     {
         public int GameManagerId { get; set; }
        public string Name { get; set; }
-        public int PlayerLimit { get; set; }
+        public int MinCount { get; set; }
+        public int MaxCount { get; set; }
+        public string Representative { get; set; }
 
         public List<Team> Teams { get; set; } = new List<Team>();
 

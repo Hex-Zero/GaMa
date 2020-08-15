@@ -26,7 +26,7 @@ namespace GameManagerUi
         {
             services.AddDbContext<GaMaDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Default"));
+                options.UseSqlite(Configuration.GetConnectionString("Default"));
             });
 
             services.AddRazorPages().AddRazorRuntimeCompilation();

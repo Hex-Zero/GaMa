@@ -14,9 +14,9 @@
                         <span asp-validation-for="GameManager.Name" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="GameManager.PlayerLimit" value="" class="control-label">Player Limit</label>
-                        <input asp-for="GameManager.PlayerLimit" class="form-control" placeholder="Minimum Player Count"/>
-                        <span asp-validation-for="GameManager.PlayerLimit" class="text-danger"></span>
+                        <label asp-for="GameManager.MinCount" value="" class="control-label">Player Limit</label>
+                        <input asp-for="GameManager.MinCount" class="form-control" placeholder="Minimum Player Count"/>
+                        <span asp-validation-for="GameManager.MinCount" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <a class="btn btn-outline-primary" asp-page="Index">Cancel</a> <input type="submit" value="Next" class="btn btn-primary float-right"/>

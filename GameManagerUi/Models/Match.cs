@@ -17,5 +17,6 @@ namespace GameManagerUi.Models
         public bool MatchFinished { get; set; }
         public DateTime Data { get; set; }
         public int ManagerId { get; set; }
+        public string Code { get; set; }
     }
 }
