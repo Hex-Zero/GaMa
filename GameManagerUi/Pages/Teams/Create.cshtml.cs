@@ -19,19 +19,8 @@ namespace GameManagerUi.Pages.Teams
             _context = context;
         }
 
-        public SelectList VenueSelect { get; set; }
-
-        void PopulateVenueList(object selectedVenue = null)
-        {
-            var venueQuery = from venue in _context.Venues
-                orderby venue.City
-                select venue;
-            VenueSelect = new SelectList(venueQuery.AsNoTracking(),"VenueId","Street", selectedVenue);
-        }
-
         public IActionResult OnGet()
         {
-            PopulateVenueList();
             return Page();
         }
 
@@ -45,7 +34,7 @@ namespace GameManagerUi.Pages.Teams
             {
                 return Page();
             }
-
+            Team.ManagerId = ManagerId.Id;
             _context.Teams.Add(Team);
             await _context.SaveChangesAsync();
 

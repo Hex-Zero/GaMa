@@ -23,7 +23,7 @@
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.Match[0].Data)
+                @Html.DisplayNameFor(model => model.Match[0].Date)
             </th>
             <th></th>
         </tr>
@@ -41,7 +41,7 @@
                @Html.DisplayFor(modelItem => item.AwayTeam.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Data)
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
                 <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.MatchId"><i class="far fa-edit"></i></a>

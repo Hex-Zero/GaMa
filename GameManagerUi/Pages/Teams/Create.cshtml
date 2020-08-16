@@ -1,37 +1,76 @@
 ﻿@page
 @model GameManagerUi.Pages.Teams.CreateModel
 
+
 @{
     ViewData["Title"] = "Create";
 }
 
 <h4>Create Team</h4>
 <hr />
+<form method="post">
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Team.Name" class="control-label"></label>
-                <input asp-for="Team.Name" class="form-control" />
+                <input asp-for="Team.Name" class="form-control" required="required"/>
                 <span asp-validation-for="Team.Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Team.VenueId" class="control-label"></label>
-                <select asp-for="Team.VenueId" class ="form-control" asp-items="@Model.VenueSelect"></select>
-                <span asp-validation-for="Team.VenueId" class="text-danger"></span>
-            </div>
+              <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#modal">
+                     Add Venue<i class="fas fa-plus pl-2"></i>
+              </button>
+              <button type="button" class="btn btn-success mb-3 float-right" data-toggle="modal" data-target="#modal">
+                     Add Players<i class="fas fa-plus pl-2"></i>
+              </button>
             <div class="d-flex justify-content-between">
                 <p>
-                <a class="btn btn-outline-primary" asp-page="./Index">Cancel</a></p>
+                    <a class="btn btn-outline-primary" asp-page="./Index">Cancel</a></p>
                 <div class="form-group">
-                    <input type="submit" value="Add" class="btn btn-primary"/>
+                    <input type="submit" value="Add Team" class="btn btn-primary"/>
                 </div>
             </div>
-        </form>
     </div>
 </div>
-
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                  <div class="form-group">
+                      <label asp-for="Team.Venue.Street" class="control-label"></label>
+                      <input asp-for="Team.Venue.Street" class="form-control" />
+                      <span asp-validation-for="Team.Venue.Street" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Team.Venue.City" class="control-label"></label>
+                      <input asp-for="Team.Venue.City" class="form-control" />
+                      <span asp-validation-for="Team.Venue.City" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Team.Venue.PostCode" class="control-label"></label>
+                      <input asp-for="Team.Venue.PostCode" class="form-control" />
+                      <span asp-validation-for="Team.Venue.PostCode" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                      <label asp-for="Team.Venue.Country" class="control-label"></label>
+                      <input asp-for="Team.Venue.Country" class="form-control" />
+                      <span asp-validation-for="Team.Venue.Country" class="text-danger"></span>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+              </div>
+          </div>
+      </div>
+</div>
+</form>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -23,7 +23,7 @@ namespace GameManagerUi.Pages.Teams
 
         public async Task OnGetAsync()
         {
-            Team = await _context.Teams.ToListAsync();
+            Team = await _context.Teams.Where(c=> c.ManagerId == ManagerId.Id).ToListAsync();
         }
     }
 }

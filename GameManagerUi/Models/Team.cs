@@ -9,8 +9,6 @@ namespace GameManagerUi.Models
     {
         public int TeamId { get; set; }
         public string Name { get; set; }
-        public int VenueId { get; set; }
-
         public Venue Venue { get; set; }
 
         public List<Player> Players { get; set; } = new List<Player>();

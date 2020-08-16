@@ -21,4 +21,12 @@
     <Folder Include="Support" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Venues\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Venues\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Venues\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Venues\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Venues\Index.cshtml" />
+  </ItemGroup>
+
 </Project>
