@@ -10,8 +10,12 @@
         </div>
         <table class="table">
             <tbody>
+            @{ var index = 0;}
             @foreach (var item in Model.GameManager)
             {
+                index++;
+                if(index > 3){break;}
+
                 <a id="manager-link-@item.GameManagerId" asp-page="/matches/index" asp-route-id="@item.GameManagerId"></a>
                 <tr onclick="$('#manager-link-@item.GameManagerId')[0].click()">
                     <td>
@@ -23,7 +27,7 @@
             }
             </tbody>
         </table>
-        <div class="d-flex justify-content-center"><a id="show-all-managers" href="#" class="btn btn-primary">Show All<i class="fas fa-sort-down pl-2"></i></a></div>
+        <div class="d-flex justify-content-center "><a id="show-all-managers"  href="#" class="btn btn-primary @(index > 3 ? "" : "disabled") ">Show All<i class="fas fa-sort-down pl-2"></i></a></div>
         <a class="btn btn-outline-primary" asp-page="Create">Add New Manager<i class="fas fa-plus pl-3"></i></a>
     </div>
 }
