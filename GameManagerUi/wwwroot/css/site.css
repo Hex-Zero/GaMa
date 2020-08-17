@@ -110,7 +110,7 @@ td{
 }
 
 #select-game-manager > table td {
-  padding: 1rem 1rem .7rem 1rem;
+  padding: 1rem 5rem .7rem 1rem;
   border: none;
   border-radius: .4rem;
 }
@@ -260,5 +260,17 @@ header .fa-times {
   background-color: #009a84;
 }
 
+.modal-dialog{
+  min-width: 650px;
+  max-width: 50vw;
+}
+
+.modal-content{
+  transform: scale(.75);
+}
+
+.modal-content > #select-game-manager {
+  transform: scale(1);
+}
 
 
